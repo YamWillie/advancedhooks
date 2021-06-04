@@ -4,8 +4,12 @@ import styled from "styled-components"
 import SEO from "../components/layout/seo"
 import PurchaseButton from "../components/buttons/PurchaseButton"
 import CourseCard from "../components/cards/CourseCard"
+import FlutterBuild from "../components/animations/FlutterBuild"
+import { useWindowSize } from "react-use"
 
 function IndexPage() {
+  const { width } = useWindowSize()
+
   return (
     <Wrapper>
       <SEO title="Home" />
@@ -29,6 +33,9 @@ function IndexPage() {
           </SmallText>
         </TextWrapper>
       </HeroWrapper>
+      <FlutterWrapper width={width}>
+        <FlutterBuild />
+      </FlutterWrapper>
     </Wrapper>
   )
 }
@@ -37,6 +44,7 @@ export default IndexPage
 
 const Wrapper = styled.div`
   background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  overflow: hidden;
 `
 
 const HeroWrapper = styled.div`
@@ -122,4 +130,13 @@ const SmallText = styled.p`
   font-size: 13px;
   line-height: 130%;
   color: rgba(255, 255, 255, 0.7);
+`
+
+const FlutterWrapper = styled.div`
+  margin: 100px auto;
+
+  @media (max-width: 1440px) {
+    transform-origin: top left;
+    transform: scale(${props => props.width / 1440});
+  }
 `
