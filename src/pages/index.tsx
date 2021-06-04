@@ -53,6 +53,10 @@ const HeroWrapper = styled.div`
     grid-template-columns: 1fr;
     justify-items: center;
   }
+
+  .courseCard {
+    margin-top: 39px;
+  }
 `
 
 const TextWrapper = styled.div`
@@ -78,6 +82,7 @@ const Title = styled.h1`
   font-size: 60px;
   line-height: 72px;
   color: #ffffff;
+  mix-blend-mode: normal;
   text-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
 `
 
@@ -85,14 +90,17 @@ const Caption = styled.p`
   font-family: SF Pro Text;
   font-style: normal;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.7);
+  line-height: 130%;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
 `
 
 const Description = styled.p`
+  max-width: 400px;
   font-family: SF Pro Text;
   font-style: normal;
   font-size: 20px;
+  line-height: 140%;
   color: #ffffff;
 `
 
@@ -110,6 +118,7 @@ const AvatarImage = styled.img`
 const SmallText = styled.p`
   max-width: 280px;
   font-family: SF Pro Text;
+  font-style: normal;
   font-size: 13px;
   line-height: 130%;
   color: rgba(255, 255, 255, 0.7);
