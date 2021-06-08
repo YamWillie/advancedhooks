@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { useWindowSize } from "react-use"
 
 import SEO from "../components/layout/seo"
 import PurchaseButton from "../components/buttons/PurchaseButton"
 import CourseCard from "../components/cards/CourseCard"
 import FlutterBuild from "../components/animations/FlutterBuild"
-import { useWindowSize } from "react-use"
+import GridSection from "../components/sections/GridSection"
 
 function IndexPage() {
   const { width } = useWindowSize()
@@ -33,6 +34,8 @@ function IndexPage() {
           </SmallText>
         </TextWrapper>
       </HeroWrapper>
+      <Divider />
+      <GridSection />
       <FlutterWrapper width={width}>
         <FlutterBuild />
       </FlutterWrapper>
@@ -139,4 +142,11 @@ const FlutterWrapper = styled.div`
     transform-origin: top left;
     transform: scale(${props => props.width / 1440});
   }
+`
+
+const Divider = styled.div`
+  width: 300px;
+  height: 0.5px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 60px auto 32px;
 `
